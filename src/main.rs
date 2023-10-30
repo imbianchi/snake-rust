@@ -1,6 +1,10 @@
 use piston_window::*;
 use piston_window::types::Color;
 
+mod drawing;
+
+use drawing::to_gui_coord_u32;
+
 
 const BG_COLOR: Color = [0.204, 0.286, 0.369, 1.0];
 
@@ -8,7 +12,7 @@ fn main() {
     let (width, height) = (20, 20);
 
     // Window Settings
-    let mut win_settings = WindowSettings::new("Snake Rust", [width, height]).exit_on_esc(true);
+    let mut win_settings = WindowSettings::new("Snake Rust", [to_gui_coord_u32(width), to_gui_coord_u32(height)]).exit_on_esc(true);
 
     win_settings.set_vsync(true);
 
