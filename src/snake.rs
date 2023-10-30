@@ -1,3 +1,5 @@
+use crate::drawing;
+
 use std::collections::LinkedList;
 use piston_window::{Context, G2d, types::Color};
 use drawing::draw_block;
@@ -21,7 +23,7 @@ impl Direction {
     }
 }
 
-#[derive(Debugm Clone)]
+#[derive(Debug, Clone)]
 struct Block {
     x: i32,
     y: i32,

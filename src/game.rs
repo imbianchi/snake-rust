@@ -1,8 +1,12 @@
 use piston_window::{*, types::Color};
 
+use crate::snake;
+use crate::drawing;
+
 use drawing::{draw_block, draw_rectangle};
-use rand::{thread_rng, Rng};
+use rand::{Rng, thread_rng};
 use snake::{Direction, Snake};
+
 
 const FOOD_COLOR: Color = [0.90, 0.49, 0.13, 1.0];
 const BORDER_COLOR: Color = [0.741, 0.765, 0.78, 1.0];
@@ -59,7 +63,7 @@ impl Game {
         self.update_snake(dir);
     }
 
-    pub fn draw(&self, con: &Context, g &mut G2d) {
+    pub fn draw(&self, con: &Context, g: &mut G2d) {
         self.snake.draw(con, g);
 
         if self.food_exist {
